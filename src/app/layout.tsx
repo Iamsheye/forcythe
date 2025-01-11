@@ -25,7 +25,8 @@ export default function RootLayout({
       <body className={`${lexend.className}`}>
         <ReactLenis
           root
-          options={{ lerp: 0.2, duration: 1.75, syncTouch: true }}>
+          options={{ lerp: 0.2, duration: 1.75, syncTouch: true }}
+        >
           {children}
         </ReactLenis>
       </body>

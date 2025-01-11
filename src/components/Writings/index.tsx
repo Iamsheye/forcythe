@@ -39,46 +39,48 @@ const Writings = () => {
     {
       dependencies: [],
       scope: writingsRef.current!,
-    }
+    },
   );
 
   return (
     <div className="wrapper my-10 lg:mb-24" ref={writingsRef}>
-      <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-12">
+      <div className="mb-12 flex flex-col md:flex-row md:items-center md:justify-between">
         <div>
           <p
             ref={readTextRef}
-            className="text-[2rem] leading-[2.5rem] sm:text-[2.2rem] sm:leading-[2.5rem] lg:text-[2.6rem] lg:leading-[3rem] mb-6 sm:mb-4 md:mb-0">
+            className="mb-6 text-[2rem] leading-[2.5rem] sm:mb-4 sm:text-[2.2rem] sm:leading-[2.5rem] md:mb-0 lg:text-[2.6rem] lg:leading-[3rem]"
+          >
             Read our articles, news and product blog
           </p>
         </div>
         <Button hasArrow>Visit Blog</Button>
       </div>
 
-      <div className="blogs grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
+      <div className="grid grid-cols-1 gap-8 md:gap-10 lg:grid-cols-3 lg:gap-12">
         {WritingCards.map((card) => (
           <Link
             key={card.href}
             href={card.href}
-            className="w-full pb-5 rounded-[1.3rem] relative overflow-hidden cursor-pointer group hover:shadow-sm hover:shadow-accent transition-all duration-500">
-            <div className="h-60 sm:h-56 relative mb-6">
-              <div className="bg-accent z-0 w-full h-full absolute top-0 left-0 bg-opacity-10 rounded-[1.3rem] animate-pulse"></div>
+            className="group relative w-full cursor-pointer overflow-hidden rounded-[1.3rem] pb-5 transition-all duration-500 hover:shadow-sm hover:shadow-accent"
+          >
+            <div className="relative mb-6 h-60 sm:h-56">
+              <div className="absolute left-0 top-0 z-0 h-full w-full animate-pulse rounded-[1.3rem] bg-accent bg-opacity-10"></div>
               <Image
                 layout="fill"
-                className="object-cover w-full h-full rounded-[1.3rem] transition-transform duration-300 transform group-hover:scale-105"
+                className="h-full w-full transform rounded-[1.3rem] object-cover transition-transform duration-300 group-hover:scale-105"
                 src={card.src}
                 alt={card.title}
               />
             </div>
 
-            <div className="pl-5 relative before:absolute before:w-[1px] before:h-[90%] before:bg-white before:left-0 before:top-[50%] before:-translate-y-[50%] group-hover:translate-x-4 custom-animate">
-              <p className="text-lg font-semibold mb-1">{card.type}</p>
-              <div className="text-base text-dark_grey flex items-center mb-6">
+            <div className="custom-animate relative pl-5 before:absolute before:left-0 before:top-[50%] before:h-[90%] before:w-[1px] before:-translate-y-[50%] before:bg-white group-hover:translate-x-4">
+              <p className="mb-1 text-lg font-semibold">{card.type}</p>
+              <div className="mb-6 flex items-center text-base text-dark_grey">
                 <span>{card.category}</span>
-                <div className="h-2 w-2 rounded-full bg-white mx-[6px] "></div>
+                <div className="mx-[6px] h-2 w-2 rounded-full bg-white"></div>
                 <span>{card.date}</span>
               </div>
-              <h6 className="text-xl md:text-2xl font-semibold line-clamp-2">
+              <h6 className="line-clamp-2 text-xl font-semibold md:text-2xl">
                 {card.title}
               </h6>
             </div>

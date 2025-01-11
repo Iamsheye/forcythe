@@ -33,9 +33,10 @@ const Header = () => {
   return (
     <>
       <header
-        className={`wrapper w-full fixed top-0 left-0 py-[1.8rem] flex justify-between gap-10 items-center z-30 ${
+        className={`wrapper fixed left-0 top-0 z-30 flex w-full items-center justify-between gap-10 py-[1.8rem] ${
           showBackdrop ? "backdrop-blur-md" : ""
-        }`}>
+        }`}
+      >
         <div className="flex items-center gap-20">
           <Link href="/">
             <Image
@@ -48,7 +49,7 @@ const Header = () => {
             />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-4 text-base">
+          <nav className="hidden items-center gap-4 text-base md:flex">
             {NavLinks.map((link) => (
               <Link key={link.name} href={link.href}>
                 <span>{link.name}</span>
@@ -63,7 +64,8 @@ const Header = () => {
 
         <button
           onClick={() => setShowMenu(!showMenu)}
-          className="menuBtn bg-white bg-opacity-10 rounded-md p-3 md:hidden cursor-pointer">
+          className="cursor-pointer rounded-md bg-white bg-opacity-10 p-3 md:hidden"
+        >
           <Image
             priority
             src="/images/menu.svg"
@@ -75,13 +77,13 @@ const Header = () => {
       </header>
 
       {showMenu && (
-        <div className="flex border-0 transition duration-500 items-center flex-col flex-nowrap gap-10 h-min justify-center overflow-visible p-px decoration-clone z-[999999999] bg-primaryBackground w-60 rounded-[2rem] fixed md:hidden right-5 top-28">
-          <div className="text-white z-10 bg-transparent rounded-[inherit] w-full">
-            <div className="w-full p-5 py-8 rounded-[2rem] bg-menu">
+        <div className="fixed right-5 top-28 z-[999999999] flex h-min w-60 flex-col flex-nowrap items-center justify-center gap-10 overflow-visible rounded-[2rem] border-0 bg-primary_background decoration-clone p-px transition duration-500 md:hidden">
+          <div className="z-10 w-full rounded-[inherit] bg-transparent text-white">
+            <div className="w-full rounded-[2rem] bg-menu p-5 py-8">
               <ul className="flex flex-col">
                 {CompanyLinks.map((link) => (
                   <li key={link.text} className="w-full py-2.5">
-                    <Link href={link.href} className="w-full text-base py-3">
+                    <Link href={link.href} className="w-full py-3 text-base">
                       <span>{link.text}</span>
                     </Link>
                   </li>
@@ -91,11 +93,12 @@ const Header = () => {
           </div>
 
           <div
-            className="flex-none inset-0 overflow-hidden absolute z-0 rounded-[inherit] w-full h-full blur-[2px]"
+            className="absolute inset-0 z-0 h-full w-full flex-none overflow-hidden rounded-[inherit] blur-[2px]"
             style={{
               background: `radial-gradient(16.6471% 42.0745% at 95.0091% 53.434%, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%)`,
-            }}></div>
-          <div className="bg-black absolute z-1 flex-none inset-[2px] rounded-[inherit]"></div>
+            }}
+          ></div>
+          <div className="z-1 absolute inset-[2px] flex-none rounded-[inherit] bg-black"></div>
         </div>
       )}
     </>

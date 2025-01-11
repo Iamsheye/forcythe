@@ -53,27 +53,29 @@ const ProductInnovation = () => {
     },
     {
       dependencies: [],
-    }
+    },
   );
 
   return (
-    <div className="wrapper py-14 bg-productInnovation">
+    <div className="wrapper bg-productInnovation py-14">
       <div>
         <p
           ref={bestCallRef}
-          className="text-[2rem] leading-[2.5rem] sm:text-[2.2rem] sm:leading-[2.5rem] lg:text-[2.6rem] lg:leading-[3rem] mb-10 text-accent2 text-center">
+          className="mb-10 text-center text-[2rem] leading-[2.5rem] text-accent2 sm:text-[2.2rem] sm:leading-[2.5rem] lg:text-[2.6rem] lg:leading-[3rem]"
+        >
           Your best call for B2B/B2C product innovation
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-7 md:gap-8">
+      <div className="grid grid-cols-1 gap-7 md:grid-cols-3 md:gap-8">
         {ProductInnovationCards.map((card) => (
           <div
             key={card.title}
-            className="relative flex border-0 transition duration-500 items-center flex-col flex-nowrap gap-10 h-min justify-center overflow-visible p-px decoration-clone w-fit rounded-2xl text-left">
-            <div className="w-auto text-white z-10 bg-transparent rounded-[inherit]">
-              <div className="w-full bg-[#030516] rounded-2xl p-8 sm:p-10 hover:shadow-dark_grey custom-animate">
-                <div className="w-fit p-2 bg-[#60A6E7] bg-opacity-60 rounded-md mb-5">
+            className="relative flex h-min w-fit flex-col flex-nowrap items-center justify-center gap-10 overflow-visible rounded-2xl border-0 decoration-clone p-px text-left transition duration-500"
+          >
+            <div className="z-10 w-auto rounded-[inherit] bg-transparent text-white">
+              <div className="custom-animate w-full rounded-2xl bg-[#030516] p-8 hover:shadow-dark_grey sm:p-10">
+                <div className="mb-5 w-fit rounded-md bg-[#60A6E7] bg-opacity-60 p-2">
                   <Image
                     alt={card.title}
                     width={30}
@@ -81,9 +83,9 @@ const ProductInnovation = () => {
                     src="/images/layers.svg"
                   />
                 </div>
-                <h4 className="text-2xl font-medium mb-5">{card.title}</h4>
+                <h4 className="mb-5 text-2xl font-medium">{card.title}</h4>
                 <div>
-                  <p className="cardText mb-0 text-dark_grey text-[17.5px]">
+                  <p className="cardText mb-0 text-[17.5px] text-dark_grey">
                     {card.text}
                   </p>
                 </div>

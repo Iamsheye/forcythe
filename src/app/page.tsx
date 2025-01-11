@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="w-full mt-[6.3rem] md:mt-[6.8rem]">
+      <main className="mt-[6.3rem] w-full md:mt-[6.8rem]">
         <ProductInnovation />
         <SolutionStats />
         <Writings />

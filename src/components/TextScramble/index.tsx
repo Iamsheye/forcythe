@@ -23,7 +23,7 @@ const TextScramble = ({
     return originalText
       .split("")
       .map((char) =>
-        char === " " ? " " : chars[Math.floor(Math.random() * chars.length)]
+        char === " " ? " " : chars[Math.floor(Math.random() * chars.length)],
       )
       .join("");
   };

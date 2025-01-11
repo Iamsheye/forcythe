@@ -27,28 +27,29 @@ const Footer = () => {
   };
 
   return (
-    <footer className="wrapper py-10 bg-secondary_background2">
-      <div className="lg:grid lg:grid-cols-3 my-10">
-        <form className="max-w-lg mb-10 lg:mb-0" onSubmit={handleSubscribeForm}>
-          <div className="w-full grid grid-cols-4">
+    <footer className="wrapper bg-secondary_background2 py-10">
+      <div className="my-10 lg:grid lg:grid-cols-3">
+        <form className="mb-10 max-w-lg lg:mb-0" onSubmit={handleSubscribeForm}>
+          <div className="grid w-full grid-cols-4">
             <input
               type="email"
               id="email"
               name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="py-3 col-span-3 bg-transparent outline-none border border-white rounded-s-full px-4 text-sm placeholder:text-[#79767D]"
+              className="col-span-3 rounded-s-full border border-white bg-transparent px-4 py-3 text-sm outline-none placeholder:text-[#79767D]"
               placeholder="Your Email Address"
             />
-            <button className="py-3 h-full bg-white text-black hover:bg-[#064386] hover:text-white custom-animate rounded-e-full text-sm font-medium border border-l-0 border-white">
+            <button className="custom-animate h-full rounded-e-full border border-l-0 border-white bg-white py-3 text-sm font-medium text-black hover:bg-[#064386] hover:text-white">
               Subscribe
             </button>
           </div>
-          <div className="flex gap-3 mt-5 items-center">
+          <div className="mt-5 flex items-center gap-3">
             <div
-              className="w-5 h-5 border-2 rounded-full bg-transparent border-white cursor-pointer flex items-center justify-center"
-              onClick={() => setChecked(!checked)}>
-              {checked && <div className="bg-white rounded-full w-2 h-2"></div>}
+              className="flex h-5 w-5 cursor-pointer items-center justify-center rounded-full border-2 border-white bg-transparent"
+              onClick={() => setChecked(!checked)}
+            >
+              {checked && <div className="h-2 w-2 rounded-full bg-white"></div>}
               <input
                 type="checkbox"
                 name="agreeReceive"
@@ -60,14 +61,14 @@ const Footer = () => {
                 }}
               />
             </div>
-            <label htmlFor="agreeReceive" className="text-sm cursor-pointer">
+            <label htmlFor="agreeReceive" className="cursor-pointer text-sm">
               I agree to receive other notifications from Forcythe
             </label>
           </div>
         </form>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:col-span-2 gap-10 md:gap-0">
-          <div className="lg:pl-14 md:col-span-2 md:pr-10">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-0 lg:col-span-2">
+          <div className="md:col-span-2 md:pr-10 lg:pl-14">
             <Image
               priority
               src="/images/forcythe_logo.svg"
@@ -76,17 +77,18 @@ const Footer = () => {
               height="9"
               className="mb-5 md:mb-8"
             />
-            <p className="text-base text-dark_grey leadin font-normal">
+            <p className="text-base text-dark_grey">
               We are the growth company for businesses looking to scale. We are
               dedicated to transforming businesses with bespoke digital
               solutions that drive growth.
             </p>
-            <div className="mt-10 hidden md:flex items-center gap-2">
+            <div className="mt-10 hidden items-center gap-2 md:flex">
               {SocialMediaLinks.map((link) => (
                 <Link
                   key={link.src}
                   href={link.href}
-                  className="w-9 h-9 cursor-pointer rounded-full border-[1px] border-accent flex justify-center items-center">
+                  className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border-[1px] border-accent"
+                >
                   <Image alt="social" width="20" height="20" src={link.src} />
                 </Link>
               ))}
@@ -98,28 +100,30 @@ const Footer = () => {
               {CompanyLinks.map((link) => (
                 <li
                   key={link.text}
-                  className="text-base text-accent2 font-medium">
+                  className="text-base font-medium text-accent2"
+                >
                   <a href={link.href}>
                     <span>{link.text}</span>
                   </a>
                 </li>
               ))}
             </ul>
-            <div className="mt-10 flex md:hidden items-center gap-2 w-fit mx-auto">
+            <div className="mx-auto mt-10 flex w-fit items-center gap-2 md:hidden">
               {SocialMediaLinks.map((link) => (
                 <a
                   key={link.src}
                   target="_blank"
-                  className="w-9 h-9 cursor-pointer rounded-full border-[1px] border-accent flex justify-center items-center"
-                  href={link.href}></a>
+                  className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border-[1px] border-accent"
+                  href={link.href}
+                ></a>
               ))}
             </div>
           </div>
         </div>
       </div>
 
-      <div className="copyright border-t-[1px] border-accent">
-        <p className="text-accent2 text-sm mt-5 text-center md:text-left">
+      <div className="border-t-[1px] border-accent">
+        <p className="mt-5 text-center text-sm text-accent2 md:text-left">
           Copyright © 2024 Forcythe. All rights reserved.
         </p>
       </div>

@@ -1,4 +1,3 @@
-"use client";
 import { FormEvent, useState } from "react";
 import Image from "next/image";
 import { CompanyLinks, SocialMediaLinks } from "@/constants";
@@ -77,7 +76,7 @@ const Footer = () => {
               height="9"
               className="mb-5 md:mb-8"
             />
-            <p className="text-base text-darkGrey leadin font-normal">
+            <p className="text-base text-dark_grey leadin font-normal">
               We are the growth company for businesses looking to scale. We are
               dedicated to transforming businesses with bespoke digital
               solutions that drive growth.

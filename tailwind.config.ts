@@ -21,6 +21,12 @@ export default {
       },
       backgroundImage: {
         menu: "linear-gradient(0deg, rgba(7, 22, 38, 0) 32%, rgb(7, 22, 38) 85%)",
+        readyScale:
+          "linear-gradient(0deg, rgb(7, 22, 38) 20%, rgb(3, 5, 22) 69%)",
+        solutionStats:
+          "linear-gradient(rgb(12, 38, 69) 20%, rgb(3, 5, 22) 60%)",
+        productInnovation:
+          "linear-gradient(0deg, rgb(12, 38, 69) 20%, rgb(3, 5, 22) 70%)",
       },
     },
   },

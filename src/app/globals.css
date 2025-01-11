@@ -28,15 +28,21 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.custom-animate {
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .wrapper {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 768px) {
   .wrapper {
-    padding-left: 7rem;
-    padding-right: 7rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
 }
 
@@ -47,9 +53,9 @@ body {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
   .wrapper {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+    padding-left: 7rem;
+    padding-right: 7rem;
   }
 }

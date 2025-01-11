@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Lexend } from "next/font/google";
+import { ReactLenis } from "@/libs/lenis";
 import "./globals.css";
 
 export const lexend = Lexend({
@@ -21,7 +22,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lexend.className}`}>{children}</body>
+      <body className={`${lexend.className}`}>
+        <ReactLenis
+          root
+          options={{ lerp: 0.2, duration: 1.75, syncTouch: true }}>
+          {children}
+        </ReactLenis>
+      </body>
     </html>
   );
 }

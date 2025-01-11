@@ -1,7 +1,9 @@
+import Footer from "@/components/Footer";
+
 export default function Home() {
   return (
     <div className="">
-      <h1 className="">Home</h1>
+      <Footer />
     </div>
   );
 }

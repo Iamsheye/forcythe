@@ -5,9 +5,11 @@
 :root {
   --primary-background: #030516;
   --secondary-background: #1f3449;
+  --secondary-background2: #071626;
   --linear-background: rgba(12, 38, 69, 0);
   --linear-background2: rgba(7, 22, 38, 0);
   --accent: #60a6e7;
+  --accent2: #b3d0f2;
   --dark-grey: #aea9b1;
   --light-grey: #e6e0e9;
 }
@@ -24,4 +26,30 @@ body {
   box-sizing: border-box;
   transition: all 0.3s ease-in-out;
   -webkit-font-smoothing: antialiased;
+}
+
+.wrapper {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 1280px) {
+  .wrapper {
+    padding-left: 7rem;
+    padding-right: 7rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrapper {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
 }

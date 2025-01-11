@@ -2,10 +2,11 @@
 import { FormEvent, useState } from "react";
 import Image from "next/image";
 import { CompanyLinks, SocialMediaLinks } from "@/constants";
+import Link from "next/link";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
-  const [checked, setChecked] = useState(true);
+  const [checked, setChecked] = useState(false);
 
   const handleSubscribeForm = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -83,13 +84,12 @@ const Footer = () => {
             </p>
             <div className="mt-10 hidden md:flex items-center gap-2">
               {SocialMediaLinks.map((link) => (
-                <a
+                <Link
                   key={link.src}
-                  target="_blank"
-                  className="w-9 h-9 cursor-pointer rounded-full border-[1px] border-accent flex justify-center items-center"
-                  href={link.href}>
+                  href={link.href}
+                  className="w-9 h-9 cursor-pointer rounded-full border-[1px] border-accent flex justify-center items-center">
                   <Image alt="social" width="20" height="20" src={link.src} />
-                </a>
+                </Link>
               ))}
             </div>
           </div>

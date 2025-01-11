@@ -19,6 +19,9 @@ export default {
         dark_grey: "var(--dark-grey)",
         light_grey: "var(--light-grey)",
       },
+      backgroundImage: {
+        menu: "linear-gradient(0deg, rgba(7, 22, 38, 0) 32%, rgb(7, 22, 38) 85%)",
+      },
     },
   },
   plugins: [],

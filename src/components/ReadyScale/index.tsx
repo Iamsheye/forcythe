@@ -10,7 +10,7 @@ const ReadyScale = () => {
           <span className="text-accent"> growth accelerator</span>
         </h2>
         <div className="mx-auto mb-5 w-fit">
-          <Button>Book a call</Button>
+          <Button>Book a Call</Button>
         </div>
       </div>
     </div>

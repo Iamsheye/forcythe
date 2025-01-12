@@ -59,7 +59,7 @@ const Header = () => {
         </div>
 
         <div className="hidden md:block">
-          <Button>Book a call</Button>
+          <Button>Book a Call</Button>
         </div>
 
         <button

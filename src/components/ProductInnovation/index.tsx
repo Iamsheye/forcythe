@@ -74,8 +74,8 @@ const ProductInnovation = () => {
             className="relative flex h-min w-fit flex-col flex-nowrap items-center justify-center gap-10 overflow-visible rounded-2xl border-0 decoration-clone p-px text-left transition duration-500"
           >
             <div className="z-10 w-auto rounded-[inherit] bg-transparent text-white">
-              <div className="custom-animate w-full rounded-2xl bg-[#030516] p-8 hover:shadow-dark_grey sm:p-10">
-                <div className="mb-5 w-fit rounded-md bg-[#60A6E7] bg-opacity-60 p-2">
+              <div className="custom-animate w-full rounded-2xl bg-primary_background p-8 hover:shadow-dark_grey sm:p-10">
+                <div className="mb-5 w-fit rounded-md bg-accent bg-opacity-60 p-2">
                   <Image
                     alt={card.title}
                     width={30}

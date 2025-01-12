@@ -16,6 +16,7 @@ export default {
         linear_background2: "var(--linear-background2)",
         accent: "var(--accent)",
         accent2: "var(--accent2)",
+        accent3: "var(--accent3)",
         dark_grey: "var(--dark-grey)",
         light_grey: "var(--light-grey)",
       },
@@ -27,6 +28,8 @@ export default {
           "linear-gradient(rgb(12, 38, 69) 20%, rgb(3, 5, 22) 60%)",
         productInnovation:
           "linear-gradient(0deg, rgb(12, 38, 69) 20%, rgb(3, 5, 22) 70%)",
+        marqueeBg:
+          "linear-gradient(0deg, rgba(3, 5, 22, 0) 20%, rgb(3, 5, 22) 80%)",
       },
     },
   },

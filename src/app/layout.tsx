@@ -3,7 +3,7 @@ import { Lexend } from "next/font/google";
 import { ReactLenis } from "@/libs/lenis";
 import "./globals.css";
 
-export const lexend = Lexend({
+const lexend = Lexend({
   variable: "--font-lexend",
   subsets: ["latin"],
 });

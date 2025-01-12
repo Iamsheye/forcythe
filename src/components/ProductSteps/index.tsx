@@ -41,19 +41,27 @@ const ProductSteps = () => {
 
   useGSAP(
     () => {
+      if (!productStepsRef.current) return;
       if (!textRef.current || !descRef.current) return;
       gsap.registerPlugin(ScrollTrigger);
 
-      gsap.from("#img-wrapper", {
-        duration: 1.5,
-        autoAlpha: 0.2,
-        clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 0%)",
-        ease: "power4.out",
+      const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: "#img-wrapper",
+          trigger: productStepsRef.current,
           start: "top 75%",
         },
       });
+
+      tl.from(
+        "#img-wrapper",
+        {
+          duration: 1.5,
+          autoAlpha: 0.2,
+          clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 0%)",
+          ease: "power4.out",
+        },
+        "first",
+      );
 
       const textTitle = new SplitType(textRef.current, {
         types: "words,chars",
@@ -63,22 +71,35 @@ const ProductSteps = () => {
         types: "words,chars",
       });
 
-      gsap.from([textTitle.words, textDesc.words], {
-        duration: 0.75,
-        autoAlpha: 0,
-        stagger: 0.25,
-        ease: "power4.out",
-        scrollTrigger: {
-          trigger: textRef.current,
-          start: "top 95%",
+      tl.from(
+        textTitle.chars,
+        {
+          duration: 1,
+          autoAlpha: 0,
+          stagger: 0.0375,
+          ease: "power4.out",
         },
-      });
+        "first",
+      );
+
+      tl.from(
+        textDesc.chars,
+        {
+          duration: 1,
+          autoAlpha: 0,
+          stagger: 0.0375,
+          ease: "power4.out",
+        },
+        "first",
+      );
     },
     {
-      dependencies: [activeStep],
+      dependencies: [activeStep, textRef, descRef],
       scope: productStepsRef.current!,
     },
   );
+
+  const activeStory = Steps[activeStep];
 
   return (
     <div ref={productStepsRef} className="wrapper py-20">
@@ -107,18 +128,19 @@ const ProductSteps = () => {
                 </button>
               ))}
             </div>
+
             <p
               ref={textRef}
               className="mb-12 text-[1.8rem] font-[500] leading-8 sm:text-[2rem] sm:leading-8"
             >
-              {Steps[activeStep].text}
+              {activeStory.text}
             </p>
 
             <p
               ref={descRef}
-              className="desc mb-8 text-base leading-7 text-dark_grey md:text-lg"
+              className="mb-8 text-base leading-7 text-dark_grey md:text-lg"
             >
-              {Steps[activeStep].desc}
+              {activeStory.desc}
             </p>
             <Button hasArrow>Book a call</Button>
           </div>
@@ -131,7 +153,7 @@ const ProductSteps = () => {
           <Image
             priority
             alt="plan-img"
-            src={Steps[activeStep].imgSrc}
+            src={activeStory.imgSrc}
             width={200}
             height={200}
             className="h-[350px] w-full md:h-[95%] md:w-[95%] lg:h-[426px] lg:w-[90%]"

@@ -63,6 +63,7 @@ const ProductSteps = () => {
         "first",
       );
 
+      SplitType.clearData();
       const textTitle = new SplitType(textRef.current, {
         types: "words,chars",
       });
@@ -72,7 +73,7 @@ const ProductSteps = () => {
       });
 
       tl.from(
-        textTitle.chars,
+        textTitle.words,
         {
           duration: 1,
           autoAlpha: 0,
@@ -83,7 +84,7 @@ const ProductSteps = () => {
       );
 
       tl.from(
-        textDesc.chars,
+        textDesc.words,
         {
           duration: 1,
           autoAlpha: 0,
@@ -94,7 +95,7 @@ const ProductSteps = () => {
       );
     },
     {
-      dependencies: [activeStep, textRef, descRef],
+      dependencies: [activeStep],
       scope: productStepsRef.current!,
     },
   );
